@@ -13,6 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
     EditText eT, eT2, eT3, eT4, eT5, eT6;
 
     @Override
@@ -26,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         eT5 = findViewById(R.id.eT5);
         eT6 = findViewById(R.id.eT6);
 
-
     }
+    //hints
     public void clicked1(View view)
     {
 
@@ -59,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    //הכפתור של הnext
     public void clicked(View view) {
-
+        // קולט את הציונים
         String name = eT.getText().toString();
         String shap = eT2.getText().toString();
         String his = eT3.getText().toString();
@@ -69,12 +70,13 @@ public class MainActivity extends AppCompatActivity {
         String hezz = eT5.getText().toString();
         String tan = eT6.getText().toString();
 
-
+        //תקינות קלט
         if (name.isEmpty() | name.equals("-") | name.equals("-.") | name.equals("+") | name.equals("+.") | shap.isEmpty() | shap.equals("-") | shap.equals("-.") | shap.equals("+") | shap.equals("+.") | his.isEmpty() | his.equals("-") | his.equals("-.") | his.equals("+") | his.equals("+.") | las.isEmpty() | las.equals("-") | las.equals("-.") | las.equals("+") | las.equals("+.") | hezz.isEmpty() | hezz.equals("-") | hezz.equals("-.") | hezz.equals("+") | hezz.equals("+.") | tan.isEmpty() | tan.equals("-") | tan.equals("-.") | tan.equals("+") | tan.equals("+."))
             Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
-        else {
+        else
+        {
 
-
+        // העברת הדברים לmain השני
             Intent si = new Intent(this, main2.class);
             si.putExtra("result", name);
             si.putExtra("result2", shap);
