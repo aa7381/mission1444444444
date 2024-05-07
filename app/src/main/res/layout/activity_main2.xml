@@ -15,7 +15,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/mathgrade"
             android:layout_width="119dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -28,6 +28,7 @@
             android:layout_weight="1" />
 
         <EditText
+            android:id="@+id/mathbag"
             android:layout_width="108dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -56,7 +57,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editTextNumber4"
+            android:id="@+id/englishgrade"
             android:layout_width="111dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -69,7 +70,7 @@
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editTextNumber5"
+            android:id="@+id/englishbag"
             android:layout_width="109dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -103,6 +104,7 @@
             android:layout_width="112dp"
             android:layout_height="78dp"
             android:layout_weight="1"
+            android:onClick="clicked9"
             android:text="מקצוע מוגבר אחד " />
 
         <Space
@@ -136,7 +138,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editTextNumber3"
+            android:id="@+id/eT14"
             android:layout_width="106dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -149,7 +151,7 @@
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editTextNumber6"
+            android:id="@+id/eT13"
             android:layout_width="102dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -162,7 +164,7 @@
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/eT12"
             android:layout_width="132dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -181,7 +183,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editTextNumber7"
+            android:id="@+id/eT17"
             android:layout_width="99dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -194,7 +196,7 @@
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editTextNumber8"
+            android:id="@+id/eT16"
             android:layout_width="87dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -207,7 +209,7 @@
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editTextText3"
+            android:id="@+id/eT15"
             android:layout_width="105dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -226,7 +228,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editTextNumber9"
+            android:id="@+id/eT20"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -239,7 +241,7 @@
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editTextNumber10"
+            android:id="@+id/eT19"
             android:layout_width="104dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -252,7 +254,7 @@
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editTextText4"
+            android:id="@+id/eT18"
             android:layout_width="105dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

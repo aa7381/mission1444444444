@@ -81,10 +81,11 @@ public class MainActivity extends AppCompatActivity {
             si.putExtra("result", name);
             si.putExtra("result2", shap);
             si.putExtra("result3", his);
-            si.putExtra("result3", las);
-            si.putExtra("result3", hezz);
-            si.putExtra("result3", tan);
+            si.putExtra("result4", las);
+            si.putExtra("result5", hezz);
+            si.putExtra("result6", tan);
             startActivity(si);
+
 
         }
 
