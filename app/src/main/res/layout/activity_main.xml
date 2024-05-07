@@ -227,7 +227,7 @@
         android:id="@+id/nextbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="clicked"
+        android:onClick="nextbtn"
         android:text="next" />
 
 </LinearLayout>
