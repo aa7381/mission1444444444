@@ -515,7 +515,7 @@ public class Page2 extends AppCompatActivity {
             sii.putExtra("result5", sum6);
 
             sum = 0 ;
-            grades =grades - num8 ;
+            grades =grades - num8 - num ;
             subjectg = 0 ;
             bonus =-bonus3 ;
             bonus3 = 0 ;
