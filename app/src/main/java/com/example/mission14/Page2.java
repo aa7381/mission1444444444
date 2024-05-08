@@ -59,6 +59,19 @@ public class Page2 extends AppCompatActivity {
 
         if (mathb.isEmpty() | mathb.equals("-") | mathb.equals("-.") | mathb.equals("+") | mathb.equals("+.") | mathg.isEmpty() | mathg.equals("-") | mathg.equals("-.") | mathg.equals("+") | mathg.equals("+.") | englishb.isEmpty() | englishb.equals("-") | englishb.equals("-.") | englishb.equals("+") | englishb.equals("+.") | englishg.isEmpty() | englishg.equals("-") | englishg.equals("-.") | englishg.equals("+") | englishg.equals("+.") )
             Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+        else if(Integer.parseInt(mathb) >5  || Integer.parseInt(mathb) <3 || Integer.parseInt(englishb) >5  || Integer.parseInt(englishb) <3 )
+        {
+            Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+            eT12.setVisibility(view.INVISIBLE);
+            eT13.setVisibility(view.INVISIBLE);
+            eT14.setVisibility(view.INVISIBLE);
+            eT15.setVisibility(view.INVISIBLE);
+            eT16.setVisibility(view.INVISIBLE);
+            eT17.setVisibility(view.INVISIBLE);
+            eT18.setVisibility(view.INVISIBLE);
+            eT19.setVisibility(view.INVISIBLE);
+            eT20.setVisibility(view.INVISIBLE);
+        }
         else
         {
             eT12.setVisibility(view.VISIBLE);
@@ -82,6 +95,19 @@ public class Page2 extends AppCompatActivity {
 
         if (mathb.isEmpty() | mathb.equals("-") | mathb.equals("-.") | mathb.equals("+") | mathb.equals("+.") | mathg.isEmpty() | mathg.equals("-") | mathg.equals("-.") | mathg.equals("+") | mathg.equals("+.") | englishb.isEmpty() | englishb.equals("-") | englishb.equals("-.") | englishb.equals("+") | englishb.equals("+.") | englishg.isEmpty() | englishg.equals("-") | englishg.equals("-.") | englishg.equals("+") | englishg.equals("+.") )
             Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+        else if(Integer.parseInt(mathb) >5  || Integer.parseInt(mathb) <3 || Integer.parseInt(englishb) >5  || Integer.parseInt(englishb) <3 )
+        {
+            Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+            eT12.setVisibility(view.INVISIBLE);
+            eT13.setVisibility(view.INVISIBLE);
+            eT14.setVisibility(view.INVISIBLE);
+            eT15.setVisibility(view.INVISIBLE);
+            eT16.setVisibility(view.INVISIBLE);
+            eT17.setVisibility(view.INVISIBLE);
+            eT18.setVisibility(view.INVISIBLE);
+            eT19.setVisibility(view.INVISIBLE);
+            eT20.setVisibility(view.INVISIBLE);
+        }
         else
         {
             eT12.setVisibility(view.VISIBLE);
@@ -105,6 +131,19 @@ public class Page2 extends AppCompatActivity {
 
         if (mathb.isEmpty() | mathb.equals("-") | mathb.equals("-.") | mathb.equals("+") | mathb.equals("+.") | mathg.isEmpty() | mathg.equals("-") | mathg.equals("-.") | mathg.equals("+") | mathg.equals("+.") | englishb.isEmpty() | englishb.equals("-") | englishb.equals("-.") | englishb.equals("+") | englishb.equals("+.") | englishg.isEmpty() | englishg.equals("-") | englishg.equals("-.") | englishg.equals("+") | englishg.equals("+.") )
             Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+        else if(Integer.parseInt(mathb) >5  || Integer.parseInt(mathb) <3 || Integer.parseInt(englishb) >5  || Integer.parseInt(englishb) <3 )
+        {
+            Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+            eT12.setVisibility(view.INVISIBLE);
+            eT13.setVisibility(view.INVISIBLE);
+            eT14.setVisibility(view.INVISIBLE);
+            eT15.setVisibility(view.INVISIBLE);
+            eT16.setVisibility(view.INVISIBLE);
+            eT17.setVisibility(view.INVISIBLE);
+            eT18.setVisibility(view.INVISIBLE);
+            eT19.setVisibility(view.INVISIBLE);
+            eT20.setVisibility(view.INVISIBLE);
+        }
         else
         {
             eT12.setVisibility(view.VISIBLE);
@@ -119,12 +158,10 @@ public class Page2 extends AppCompatActivity {
             count = 3 ;
         }
     }
-
     public void prev(View view)
     {
         finish();
     }
-
     public void nextbtn2(View view)
     {
         if(count == 1 )
@@ -180,6 +217,8 @@ public class Page2 extends AppCompatActivity {
             sii.putExtra("result", sum);
             sii. putExtra("grades", num);
             sii. putExtra("name", namesubject);
+            sii. putExtra("final", finalgrade);
+
             startActivity(sii);
         }
         else if (count == 2)
@@ -252,6 +291,10 @@ public class Page2 extends AppCompatActivity {
             String namesubject = eT12.getText().toString();
             sii.putExtra("result", sum2);
             sii. putExtra("name", namesubject);
+            sii. putExtra("final", finalgrade);
+            sii. putExtra("grades", num);
+
+
 
 
 
@@ -300,6 +343,8 @@ public class Page2 extends AppCompatActivity {
             sii.putExtra("result2", sum3);
             sii. putExtra("grades2", num4);
             sii. putExtra("name3", namesubject2);
+            sii. putExtra("final2", finalgrade);
+
 
 
 
@@ -542,5 +587,26 @@ public class Page2 extends AppCompatActivity {
             startActivity(sii);
 
         }
+        else {
+            eT12.setVisibility(view.INVISIBLE);
+            eT13.setVisibility(view.INVISIBLE);
+            eT14.setVisibility(view.INVISIBLE);
+            eT15.setVisibility(view.INVISIBLE);
+            eT16.setVisibility(view.INVISIBLE);
+            eT17.setVisibility(view.INVISIBLE);
+            eT18.setVisibility(view.INVISIBLE);
+            eT19.setVisibility(view.INVISIBLE);
+            eT20.setVisibility(view.INVISIBLE);
+        }
+        Intent si = new Intent(this, MainActivity3.class);
+        si.putExtra("subject", name);
+        si.putExtra("subject2", shap);
+        si.putExtra("subject3", his);
+        si.putExtra("subject4", las);
+        si.putExtra("subject5", hezz);
+        si.putExtra("subject6", tan);
+        si.putExtra("subject7", count);
+        startActivity(si);
+
 }
     }
