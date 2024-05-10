@@ -605,7 +605,6 @@ public class Page2 extends AppCompatActivity {
             si. putExtra("name8", namesubject);
             si.putExtra("subjectCount", count);
 
-            startActivity( si);
         }
         else {
             eT12.setVisibility(view.INVISIBLE);
