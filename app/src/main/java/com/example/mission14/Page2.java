@@ -1,6 +1,7 @@
 package com.example.mission14;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,6 +53,7 @@ public class Page2 extends AppCompatActivity {
     }
     public static int math(String mathb , String mathg , EditText mathbag , EditText mathgrade , int mathgg ,int mathbonus)
     {
+        mathg = mathbag.getText().toString();
         mathgg = Integer.parseInt(mathg);
         if (mathgg == 5) {
             mathbonus = +30;
@@ -67,6 +69,7 @@ public class Page2 extends AppCompatActivity {
     }
     public static int english(String englishb , String englishg , EditText englishbag, EditText englishgrade , int englishgg ,int englishbonus)
     {
+        englishg = englishbag.getText().toString();
         englishgg = Integer.parseInt(englishg);
         if (englishgg == 5) {
             englishbonus = +30;
@@ -201,23 +204,40 @@ public class Page2 extends AppCompatActivity {
         si.putExtra("subject5", hezz);
         si.putExtra("subject6", tan);
         si.putExtra("subject7", count);
+        si.putExtra("subjectCount", count);
+
+        String mathh = mathbag.getText().toString();
+        mathgg = Integer.parseInt(mathh);
+        String englishh = mathbag.getText().toString();
+        englishgg = Integer.parseInt(englishh);
+
         switch (count) {
             case (1):
                 subjectg = 0;
                 namesubject = eT12.getText().toString();
-                mathgg = Integer.parseInt(mathg);
-                englishgg = Integer.parseInt(englishg);
                 grades = grades + mathgg + englishgg;
 
                 mathbonus2 = math(mathb, mathg, mathbag, mathgrade, mathgg, mathbonus);
                 englishbonus2 = english(englishb, englishg, englishbag, englishgrade, englishgg, englishbonus);
 
+
+                if(TextUtils.isEmpty(eT13.getText().toString()) | eT13.equals("-") | eT13.equals("-.") | eT13.equals("+") | eT13.equals("+."))
+                {
+                Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+                }else
+            {
                 numm = eT13.getText().toString();
-                num = Integer.parseInt(numm);
+            }
+                if (!numm.isEmpty()) {
+                    num = Integer.parseInt(numm);
+                } else
+                    Toast.makeText(this, "Invalid input: Field cannot be empty", Toast.LENGTH_SHORT).show();
+
                 if(Integer.parseInt(String.valueOf(num)) >5  || Integer.parseInt(String.valueOf(num)) <4 || Integer.parseInt(String.valueOf(num)) ==1 )
                 {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
                 }else {
+
                     if (num == 5) {
                         subjectg =subjectg +5;
                         grades =grades +5;
@@ -249,15 +269,22 @@ public class Page2 extends AppCompatActivity {
             case (2):
                 grades = 10;
                 subjectg = 0;
-                mathgg = Integer.parseInt(mathg);
-                englishgg = Integer.parseInt(englishg);
                 grades = grades + mathgg + englishgg;
 
                 mathbonus2 = math(mathb, mathg, mathbag, mathgrade, mathgg, mathbonus);
                 englishbonus2 = english(englishb, englishg, englishbag, englishgrade, englishgg, englishbonus);
+                if(TextUtils.isEmpty(eT13.getText().toString()) | eT13.equals("-") | eT13.equals("-.") | eT13.equals("+") | eT13.equals("+."))
+                {
+                    Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+                }else
+                    numm = eT13.getText().toString();
 
-                numm = eT13.getText().toString();
-                num = Integer.parseInt(numm);
+                if (!numm.isEmpty()) {
+                    num = Integer.parseInt(numm);
+                } else
+                    Toast.makeText(this, "Invalid input: Field cannot be empty", Toast.LENGTH_SHORT).show();
+
+
                 if(Integer.parseInt(String.valueOf(num)) >5  || Integer.parseInt(String.valueOf(num)) <4 || Integer.parseInt(String.valueOf(num)) ==1 )
                 {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
@@ -290,8 +317,18 @@ public class Page2 extends AppCompatActivity {
                 grades =grades -num;
                 subjectg = 0;
 
+                if(TextUtils.isEmpty(eT16.getText().toString()) | eT16.equals("-") | eT16.equals("-.") | eT16.equals("+") | eT16.equals("+."))
+                {
+                    Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+                }else
                 num3 = eT16.getText().toString();
-                num4 = Integer.parseInt(num3);
+
+                if (!num3.isEmpty()) {
+                    num4 = Integer.parseInt(num3);
+                } else
+                    Toast.makeText(this, "Invalid input: Field cannot be empty", Toast.LENGTH_SHORT).show();
+
+
                 if(Integer.parseInt(String.valueOf(num4)) >5  || Integer.parseInt(String.valueOf(num4)) <4 || Integer.parseInt(String.valueOf(num4)) ==1 )
                 {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
@@ -335,13 +372,12 @@ public class Page2 extends AppCompatActivity {
                 si.putExtra("result", sum2);
                 si.putExtra("name", namesubject);
 
-                si.putExtra("grade", num4);
+                si.putExtra("grade2", num4);
                 si.putExtra("final2", finalgradesec);
-                si.putExtra("result", sum3);
+                si.putExtra("result2", sum3);
                 si.putExtra("name2", namesubject2);
 
                 si.putExtra("result3", sum4);
-                si.putExtra("subjectCount", count);
                 startActivity(si);
                 break;
 
@@ -351,15 +387,22 @@ public class Page2 extends AppCompatActivity {
                 grades = 10;
                 subjectg = 0;
 
-                mathgg = Integer.parseInt(mathg);
-                englishgg = Integer.parseInt(englishg);
                 grades = grades + mathgg + englishgg;
                 // בודק יחידות
                     mathbonus2 = math(mathb, mathg, mathbag, mathgrade, mathgg, mathbonus);
                     englishbonus2 = english(englishb, englishg, englishbag, englishgrade, englishgg, englishbonus);
                 // בודק כמה יחידות יש לשורה הראשונה
+                if(TextUtils.isEmpty(eT13.getText().toString()) | eT13.equals("-") | eT13.equals("-.") | eT13.equals("+") | eT13.equals("+."))
+                {
+                    Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+                }else
                 numm = eT13.getText().toString();
-                num = Integer.parseInt(numm);
+                if (!numm.isEmpty()) {
+                    num = Integer.parseInt(numm);
+                } else
+                    Toast.makeText(this, "Invalid input: Field cannot be empty", Toast.LENGTH_SHORT).show();
+
+
                 if(Integer.parseInt(String.valueOf(num)) >5  || Integer.parseInt(String.valueOf(num)) <4 || Integer.parseInt(String.valueOf(num)) ==1 )
                 {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
@@ -390,8 +433,18 @@ public class Page2 extends AppCompatActivity {
                 grades =grades -num;
                 subjectg = 0;
                 // בודק כמה יחידות יש לשורה השניה
-                num3 = eT16.getText().toString();
-                num4 = Integer.parseInt(num3);
+                if(TextUtils.isEmpty(eT16.getText().toString()) | eT16.equals("-") | eT16.equals("-.") | eT16.equals("+") | eT16.equals("+."))
+                {
+                    Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+                }else
+                        num3 = eT16.getText().toString();
+
+                if (!num3.isEmpty()) {
+                    num4 = Integer.parseInt(num3);
+                } else
+                    Toast.makeText(this, "Invalid input: Field cannot be empty", Toast.LENGTH_SHORT).show();
+
+
                 if(Integer.parseInt(String.valueOf(num4)) >5  || Integer.parseInt(String.valueOf(num4)) <4 || Integer.parseInt(String.valueOf(num4)) ==1 )
                 {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
@@ -430,8 +483,18 @@ public class Page2 extends AppCompatActivity {
                 grades = grades - num4 - num;
                 subjectg = 0;
                 //מחשב את העמוד השלישי כמה יחידות יש
-                num7 = eT19.getText().toString();
-                num8 = Integer.parseInt(num7);
+                if(TextUtils.isEmpty(eT19.getText().toString())| eT19.equals("-") | eT19.equals("-.") | eT19.equals("+") | eT19.equals("+."))
+                {
+                    Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+                }else
+                    num7 = eT19.getText().toString();
+
+                if (!num7.isEmpty()) {
+                    num8 = Integer.parseInt(num7);
+                } else
+                    Toast.makeText(this, "Invalid input: Field cannot be empty", Toast.LENGTH_SHORT).show();
+
+
                 if(Integer.parseInt(String.valueOf(num8)) >5  || Integer.parseInt(String.valueOf(num8)) <4 || Integer.parseInt(String.valueOf(num8)) ==1 )
                 {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
@@ -498,18 +561,17 @@ public class Page2 extends AppCompatActivity {
 
                 si.putExtra("result3", sum4);
 
-                si.putExtra("result10", num8);
+                si.putExtra("grade3", num8);
                 si.putExtra("final3",finalgradethi);
-                si.putExtra("result3", sum3);
+                si.putExtra("result4", sum5);
                 si.putExtra("name3", namesubject3);
 
-                si.putExtra("result4", sum6);
+                si.putExtra("result5", sum6);
 
-                si.putExtra("result5", sum7);
+                si.putExtra("result6", sum7);
 
-                si.putExtra("result6", sum8);
+                si.putExtra("result7", sum8);
 
-                si.putExtra("subjectCount", count);
 
                 startActivity(si);
                 break;
@@ -526,5 +588,6 @@ public class Page2 extends AppCompatActivity {
                     eT20.setVisibility(view.INVISIBLE);
                     break;
         }
+
     }
 }
