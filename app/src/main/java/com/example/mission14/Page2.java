@@ -219,15 +219,20 @@ public class Page2 extends AppCompatActivity {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
                 }else {
                     if (num == 5) {
-                        subjectg = +5;
-                        grades = +5;
+                        subjectg =subjectg +5;
+                        grades =grades +5;
                         bonusfirst = 20;
                     } else if (num == 4) {
-                        subjectg = +4;
-                        grades = +4;
+                        subjectg =subjectg +4;
+                        grades =grades +4;
                         bonusfirst = 10;
                     }
+                    else{
+                        subjectg =subjectg + 1;
+                        grades =subjectg  +1;
+                    }
                 }
+
                 nummm = eT14.getText().toString();
                 finalgrade = Integer.parseInt(nummm);
                 finalgradefir = Integer.parseInt(nummm);
@@ -258,13 +263,17 @@ public class Page2 extends AppCompatActivity {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
                 }else {
                     if (num == 5) {
-                        subjectg = +5;
-                        grades = +5;
+                        subjectg =subjectg +5;
+                        grades =grades +5;
                         bonusfirst = 20;
                     } else if (num == 4) {
-                        subjectg = +4;
-                        grades = +4;
+                        subjectg =subjectg +4;
+                        grades =grades +4;
                         bonusfirst = 10;
+                    }
+                    else{
+                        subjectg =subjectg + 1;
+                        grades =subjectg  +1;
                     }
                 }
 
@@ -288,13 +297,17 @@ public class Page2 extends AppCompatActivity {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
                 }else {
                     if (num4 == 5) {
-                        subjectg = +5;
+                        subjectg =subjectg +5;
                         grades = +5;
                         bonusfirst = 20;
                     } else if (num4 == 4) {
-                        subjectg = +4;
-                        grades = +4;
+                        subjectg =subjectg +4;
+                        grades =grades +4;
                         bonusfirst = 10;
+                    }
+                    else{
+                        subjectg =subjectg + 1;
+                        grades =subjectg  +1;
                     }
                 }
                 //שורה שניה
@@ -313,18 +326,20 @@ public class Page2 extends AppCompatActivity {
                 // שורה ראשונה ושניה
                 grades = grades + num4 + num;
                 subjectg = subjectg + num4 + num;
-                finalgrade = finalgradesec + finalgradefir + bonusfirst + bonussecond + mathbonus2 + englishbonus2;
+                finalgrade = finalgradesec +  finalgradefir + bonusfirst + bonussecond + mathbonus2 + englishbonus2;
                 finalgrade = finalgrade * subjectg;
                 sum4 = finalgrade / grades;
 
-                si.putExtra("result13", sum2);
-                si.putExtra("name13", namesubject);
-                si.putExtra("final13", num6);
-                si.putExtra("grades13", num);
-                si.putExtra("result2", sum3);
-                si.putExtra("grades2", num4);
-                si.putExtra("name3", namesubject2);
-                si.putExtra("final2", num2);
+                si.putExtra("grade", num);
+                si.putExtra("final", finalgradefir);
+                si.putExtra("result", sum2);
+                si.putExtra("name", namesubject);
+
+                si.putExtra("grade", num4);
+                si.putExtra("final2", finalgradesec);
+                si.putExtra("result", sum3);
+                si.putExtra("name2", namesubject2);
+
                 si.putExtra("result3", sum4);
                 si.putExtra("subjectCount", count);
                 startActivity(si);
@@ -350,13 +365,17 @@ public class Page2 extends AppCompatActivity {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
                 }else {
                     if (num == 5) {
-                        subjectg = +5;
+                        subjectg =subjectg +5;
                         grades = +5;
                         bonusfirst = 20;
                     } else if (num == 4) {
-                        subjectg = +4;
-                        grades = +4;
+                        subjectg =subjectg +4;
+                        grades =grades  +4;
                         bonusfirst = 10;
+                    }
+                    else{
+                        subjectg =subjectg + 1;
+                        grades =subjectg  +1;
                     }
                 }
                 // מחשב את הציון הממוצע של שורה ראשונה
@@ -378,13 +397,17 @@ public class Page2 extends AppCompatActivity {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
                 }else {
                     if (num4 == 5) {
-                        subjectg = +5;
-                        grades = +5;
+                        subjectg =subjectg +5;
+                        grades =grades +5;
                         bonusfirst = 20;
                     } else if (num4 == 4) {
-                        subjectg = +4;
-                        grades = +4;
+                        subjectg = subjectg +4;
+                        grades =grades +4;
                         bonusfirst = 10;
+                    }
+                    else{
+                        subjectg =subjectg + 1;
+                        grades =subjectg  +1;
                     }
                 }
                 // מחשב את הציון הממוצע של שורה שניה
@@ -414,16 +437,19 @@ public class Page2 extends AppCompatActivity {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
                 }else {
                     if (num8 == 5) {
-                        subjectg = +5;
-                        grades = +5;
+                        subjectg =subjectg +5;
+                        grades = grades +5;
                         bonusfirst = 20;
                     } else if (num8 == 4) {
-                        subjectg = +4;
-                        grades = +4;
+                        subjectg =subjectg +4;
+                        grades = grades +4;
                         bonusfirst = 10;
                     }
+                    else{
+                        subjectg =subjectg + 1;
+                        grades =subjectg  +1;
+                    }
                 }
-
                 // מחשב את הממוצע של שורה שלוש
                 num9 = eT20.getText().toString();
                 finalgrade = Integer.parseInt(num9);
@@ -460,19 +486,31 @@ public class Page2 extends AppCompatActivity {
                 finalgrade = finalgrade * subjectg;
                 sum8 = finalgrade / grades;
 
-                si.putExtra("result8", sum8);
-                si.putExtra("result7", sum7);
-                si.putExtra("result4", sum5);
-                si.putExtra("grades3", num8);
-                si.putExtra("name4", namesubject3);
-                si.putExtra("result6", sum4);
-                si.putExtra("result11", sum3);
-                si.putExtra("grades9", num4);
-                si.putExtra("name9", namesubject2);
-                si.putExtra("result10", sum2);
-                si.putExtra("grades3", num);
-                si.putExtra("name8", namesubject);
+                si.putExtra("grade", num);
+                si.putExtra("final", finalgradefir);
+                si.putExtra("result", sum2);
+                si.putExtra("name", namesubject);
+
+                si.putExtra("grade2", num4);
+                si.putExtra("final2", finalgradesec);
+                si.putExtra("result2", sum3);
+                si.putExtra("name2", namesubject2);
+
+                si.putExtra("result3", sum4);
+
+                si.putExtra("result10", num8);
+                si.putExtra("final3",finalgradethi);
+                si.putExtra("result3", sum3);
+                si.putExtra("name3", namesubject3);
+
+                si.putExtra("result4", sum6);
+
+                si.putExtra("result5", sum7);
+
+                si.putExtra("result6", sum8);
+
                 si.putExtra("subjectCount", count);
+
                 startActivity(si);
                 break;
 
