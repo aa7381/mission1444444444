@@ -204,12 +204,20 @@ public class Page2 extends AppCompatActivity {
         si.putExtra("subject5", hezz);
         si.putExtra("subject6", tan);
         si.putExtra("subject7", count);
+        si.putExtra("math1", String.valueOf(mathb));
+        si.putExtra("math2", String.valueOf(mathg));
+        si.putExtra("english1", String.valueOf(englishb));
+        si.putExtra("english2", String.valueOf(englishg));
         si.putExtra("subjectCount", count);
+
 
         String mathh = mathbag.getText().toString();
         mathgg = Integer.parseInt(mathh);
+
         String englishh = mathbag.getText().toString();
         englishgg = Integer.parseInt(englishh);
+
+
 
         switch (count) {
             case (1):
@@ -228,10 +236,8 @@ public class Page2 extends AppCompatActivity {
             {
                 numm = eT13.getText().toString();
             }
-                if (!numm.isEmpty()) {
+
                     num = Integer.parseInt(numm);
-                } else
-                    Toast.makeText(this, "Invalid input: Field cannot be empty", Toast.LENGTH_SHORT).show();
 
                 if(Integer.parseInt(String.valueOf(num)) >5  || Integer.parseInt(String.valueOf(num)) <4 || Integer.parseInt(String.valueOf(num)) ==1 )
                 {
@@ -256,13 +262,13 @@ public class Page2 extends AppCompatActivity {
                 nummm = eT14.getText().toString();
                 finalgrade = Integer.parseInt(nummm);
                 finalgradefir = Integer.parseInt(nummm);
-                finalgrade = +bonusfirst + mathbonus2 + englishbonus2;
+                finalgrade =finalgrade +bonusfirst + mathbonus2 + englishbonus2;
                 finalgrade = finalgrade * subjectg;
-                sum = finalgrade / grades;
-                si.putExtra("result", sum);
-                si.putExtra("grades", num);
-                si.putExtra("name", namesubject);
-                si.putExtra("final", finalgradefir);
+                double sum30 = finalgrade / grades;
+                si.putExtra("result12", String.valueOf(sum30));
+                si.putExtra("grades12", numm);
+                si.putExtra("name12", namesubject);
+                si.putExtra("final12", nummm);
                 startActivity(si);
                 break;
 
@@ -279,10 +285,9 @@ public class Page2 extends AppCompatActivity {
                 }else
                     numm = eT13.getText().toString();
 
-                if (!numm.isEmpty()) {
+
                     num = Integer.parseInt(numm);
-                } else
-                    Toast.makeText(this, "Invalid input: Field cannot be empty", Toast.LENGTH_SHORT).show();
+
 
 
                 if(Integer.parseInt(String.valueOf(num)) >5  || Integer.parseInt(String.valueOf(num)) <4 || Integer.parseInt(String.valueOf(num)) ==1 )
@@ -323,11 +328,7 @@ public class Page2 extends AppCompatActivity {
                 }else
                 num3 = eT16.getText().toString();
 
-                if (!num3.isEmpty()) {
                     num4 = Integer.parseInt(num3);
-                } else
-                    Toast.makeText(this, "Invalid input: Field cannot be empty", Toast.LENGTH_SHORT).show();
-
 
                 if(Integer.parseInt(String.valueOf(num4)) >5  || Integer.parseInt(String.valueOf(num4)) <4 || Integer.parseInt(String.valueOf(num4)) ==1 )
                 {
@@ -367,17 +368,18 @@ public class Page2 extends AppCompatActivity {
                 finalgrade = finalgrade * subjectg;
                 sum4 = finalgrade / grades;
 
-                si.putExtra("grade", num);
-                si.putExtra("final", finalgradefir);
-                si.putExtra("result", sum2);
+                si.putExtra("grade", numm);
+                si.putExtra("final", num2);
+                si.putExtra("result", String.valueOf(sum2));
                 si.putExtra("name", namesubject);
 
-                si.putExtra("grade2", num4);
-                si.putExtra("final2", finalgradesec);
-                si.putExtra("result2", sum3);
+                si.putExtra("grade2", num3);
+                si.putExtra("final2", num6);
+                si.putExtra("result2", String.valueOf(sum3));
                 si.putExtra("name2", namesubject2);
 
-                si.putExtra("result3", sum4);
+                si.putExtra("result3",String.valueOf( sum4));
+
                 startActivity(si);
                 break;
 
@@ -397,11 +399,8 @@ public class Page2 extends AppCompatActivity {
                     Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
                 }else
                 numm = eT13.getText().toString();
-                if (!numm.isEmpty()) {
-                    num = Integer.parseInt(numm);
-                } else
-                    Toast.makeText(this, "Invalid input: Field cannot be empty", Toast.LENGTH_SHORT).show();
 
+                    num = Integer.parseInt(numm);
 
                 if(Integer.parseInt(String.valueOf(num)) >5  || Integer.parseInt(String.valueOf(num)) <4 || Integer.parseInt(String.valueOf(num)) ==1 )
                 {
@@ -439,10 +438,8 @@ public class Page2 extends AppCompatActivity {
                 }else
                         num3 = eT16.getText().toString();
 
-                if (!num3.isEmpty()) {
+
                     num4 = Integer.parseInt(num3);
-                } else
-                    Toast.makeText(this, "Invalid input: Field cannot be empty", Toast.LENGTH_SHORT).show();
 
 
                 if(Integer.parseInt(String.valueOf(num4)) >5  || Integer.parseInt(String.valueOf(num4)) <4 || Integer.parseInt(String.valueOf(num4)) ==1 )
@@ -489,11 +486,7 @@ public class Page2 extends AppCompatActivity {
                 }else
                     num7 = eT19.getText().toString();
 
-                if (!num7.isEmpty()) {
                     num8 = Integer.parseInt(num7);
-                } else
-                    Toast.makeText(this, "Invalid input: Field cannot be empty", Toast.LENGTH_SHORT).show();
-
 
                 if(Integer.parseInt(String.valueOf(num8)) >5  || Integer.parseInt(String.valueOf(num8)) <4 || Integer.parseInt(String.valueOf(num8)) ==1 )
                 {
@@ -549,28 +542,29 @@ public class Page2 extends AppCompatActivity {
                 finalgrade = finalgrade * subjectg;
                 sum8 = finalgrade / grades;
 
-                si.putExtra("grade", num);
-                si.putExtra("final", finalgradefir);
-                si.putExtra("result", sum2);
+                si.putExtra("grade", num2);
+                si.putExtra("final", numm);
+                si.putExtra("result", String.valueOf(sum2));
                 si.putExtra("name", namesubject);
 
-                si.putExtra("grade2", num4);
-                si.putExtra("final2", finalgradesec);
-                si.putExtra("result2", sum3);
+                si.putExtra("grade2", num3);
+                si.putExtra("final2", num6);
+                si.putExtra("result2", String.valueOf(sum3));
                 si.putExtra("name2", namesubject2);
 
-                si.putExtra("result3", sum4);
+                si.putExtra("result3", String.valueOf(sum4));
 
-                si.putExtra("grade3", num8);
-                si.putExtra("final3",finalgradethi);
-                si.putExtra("result4", sum5);
+                si.putExtra("grade3", num7);
+                si.putExtra("final3",num9);
+                si.putExtra("result4", String.valueOf(sum5));
                 si.putExtra("name3", namesubject3);
 
-                si.putExtra("result5", sum6);
+                si.putExtra("result5", String.valueOf(sum6));
 
-                si.putExtra("result6", sum7);
+                si.putExtra("result6",String.valueOf( sum7));
 
-                si.putExtra("result7", sum8);
+                si.putExtra("result7",String.valueOf( sum8));
+
 
 
                 startActivity(si);
