@@ -50,6 +50,7 @@ public class MainActivity3 extends AppCompatActivity {
                 String grades1 = intent.getStringExtra("grades12");
                 String name1 = intent.getStringExtra("name12");
                 String finalGrade1 = intent.getStringExtra("final12");
+                Double max = intent.getDoubleExtra("max",0);
 
                 tV.setText("                                     name:" + name11+ "\n" +
                         shap + "                             2                             shaprot                     " + "\n" +
@@ -60,7 +61,7 @@ public class MainActivity3 extends AppCompatActivity {
                         math2 + "                             " + math1 + "                             math                     " + "\n" +
                         english2 + "                             " + english1 + "                              english                     " + "\n" +
                         finalGrade1 + "                             " + grades1 + "                             " + name1 + "                     " + "\n");
-                 tV15.setText( ""+ result1);
+                 tV15.setText( ""+ result1+"                         the highest result is:" +max);
                 break;
             case 2:
                 String grade = intent.getStringExtra("grade");
@@ -75,6 +76,7 @@ public class MainActivity3 extends AppCompatActivity {
 
                 String result3 =  intent.getStringExtra("result3");
 
+                Double max2 = intent.getDoubleExtra("max",0);
 
                 tV.setText("                                     name:" + name11+ "\n" +
                         shap + "                             2                             shaprot                     " + "\n" +
@@ -88,7 +90,7 @@ public class MainActivity3 extends AppCompatActivity {
                         finalGrade2 + "                             " + grade2 + "                             " + name2 + "                     " + "\n"
                         );
 
-                tV15.setText( ""+ result +"\n"+result2 +"\n"+result3  );
+                tV15.setText( ""+ result+"                         the highest result is:" +max2 +"\n"+result2 +"\n"+result3  );
 
 
                 break;
@@ -118,6 +120,8 @@ public class MainActivity3 extends AppCompatActivity {
 
                 String result10 = intent.getStringExtra ("result7");
 
+                Double max3 = intent.getDoubleExtra("max",0);
+
                 tV.setText("                                     name:" + name11+ "\n" +
                         shap + "                             2                             shaprot                     " + "\n" +
                         his + "                             2                             history                     " + "\n" +
@@ -126,11 +130,11 @@ public class MainActivity3 extends AppCompatActivity {
                         tan + "                             2                              tanah                     " + "\n" +
                         math2 + "                             " + math1 + "                             math                     " + "\n" +
                         english2 + "                             " + english1 + "                              english                     " + "\n" +
-                        finalGrade3 + "                             " + grade3 + "                             " + name3 + "                     " + "\n" +
+                        grade3 + "                             " + finalGrade3+ "                             " + name3 + "                     " + "\n" +
                         finalGrade4 + "                             " + grade4 + "                             " + name4 + "                     " + "\n" +
                         finalGrade5 + "                             " + grade5 + "                             " + name6 + "                     ");
 
-                tV15.setText( ""+ result4 +"\n"+result5 +"\n"+result6+"\n"+result7+"\n"+result8+"\n"+result9+"\n"+result10 );
+                tV15.setText( ""+ result4 +"                         the highest result is:" +max3+"\n"+result5 +"\n"+result6+"\n"+result7+"\n"+result8+"\n"+result9+"\n"+result10 );
 
                 break;
 
