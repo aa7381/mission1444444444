@@ -223,6 +223,8 @@ public class Page2 extends AppCompatActivity {
         String englishh = mathbag.getText().toString();
         englishgg = Integer.parseInt(englishh);
 
+        
+
         if (count == 3  && (TextUtils.isEmpty(eT12.getText().toString()) || eT12.equals("-") || eT12.equals("-.") || eT12.equals("+") || eT12.equals("+.") || TextUtils.isEmpty(eT13.getText().toString()) || eT13.equals("-") || eT13.equals("-.") || eT13.equals("+") || eT13.equals("+.") || TextUtils.isEmpty(eT14.getText().toString()) || eT14.equals("-") || eT14.equals("-.") || eT14.equals("+") || eT14.equals("+.") ||
                 TextUtils.isEmpty(eT15.getText().toString()) || eT15.equals("-") || eT15.equals("-.") || eT15.equals("+") || eT15.equals("+.") || TextUtils.isEmpty(eT16.getText().toString()) || eT16.equals("-") || eT16.equals("-.") || eT16.equals("+") || eT16.equals("+.") || TextUtils.isEmpty(eT17.getText().toString()) || eT17.equals("-") || eT17.equals("-.") || eT17.equals("+") || eT17.equals("+.") ||
                 TextUtils.isEmpty(eT18.getText().toString()) || eT18.equals("-") || eT18.equals("-.") || eT18.equals("+") || eT18.equals("+.") || TextUtils.isEmpty(eT19.getText().toString()) || eT19.equals("-") || eT19.equals("-.") || eT19.equals("+") || eT19.equals("+.") || TextUtils.isEmpty(eT20.getText().toString()) || eT20.equals("-") || eT20.equals("-.") || eT20.equals("+") || eT20.equals("+."))) {
