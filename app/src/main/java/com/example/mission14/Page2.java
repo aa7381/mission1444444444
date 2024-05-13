@@ -96,7 +96,7 @@ public class Page2 extends AppCompatActivity {
 
         if (mathb.isEmpty() | mathb.equals("-") | mathb.equals("-.") | mathb.equals("+") | mathb.equals("+.") | mathg.isEmpty() | mathg.equals("-") | mathg.equals("-.") | mathg.equals("+") | mathg.equals("+.") | englishb.isEmpty() | englishb.equals("-") | englishb.equals("-.") | englishb.equals("+") | englishb.equals("+.") | englishg.isEmpty() | englishg.equals("-") | englishg.equals("-.") | englishg.equals("+") | englishg.equals("+."))
             Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
-        else if (Integer.parseInt(mathb) > 5 || Integer.parseInt(mathb) < 3 || Integer.parseInt(englishb) > 5 || Integer.parseInt(englishb) < 3) {
+        else if (Integer.parseInt(mathb) > 5 || Integer.parseInt(mathb) < 3 || Integer.parseInt(englishb) > 5 || Integer.parseInt(englishb) < 3|| Integer.parseInt(englishg) >100|| Integer.parseInt(mathg) >100) {
             Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
             eT12.setVisibility(view.INVISIBLE);
             eT13.setVisibility(view.INVISIBLE);
@@ -131,7 +131,7 @@ public class Page2 extends AppCompatActivity {
 
         if (mathb.isEmpty() | mathb.equals("-") | mathb.equals("-.") | mathb.equals("+") | mathb.equals("+.") | mathg.isEmpty() | mathg.equals("-") | mathg.equals("-.") | mathg.equals("+") | mathg.equals("+.") | englishb.isEmpty() | englishb.equals("-") | englishb.equals("-.") | englishb.equals("+") | englishb.equals("+.") | englishg.isEmpty() | englishg.equals("-") | englishg.equals("-.") | englishg.equals("+") | englishg.equals("+."))
             Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
-        else if (Integer.parseInt(mathb) > 5 || Integer.parseInt(mathb) < 3 || Integer.parseInt(englishb) > 5 || Integer.parseInt(englishb) < 3) {
+        else if (Integer.parseInt(mathb) > 5 || Integer.parseInt(mathb) < 3 || Integer.parseInt(englishb) > 5 || Integer.parseInt(englishb) < 3|| Integer.parseInt(englishg) >100|| Integer.parseInt(mathg) >100) {
             Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
             eT12.setVisibility(view.INVISIBLE);
             eT13.setVisibility(view.INVISIBLE);
@@ -166,7 +166,7 @@ public class Page2 extends AppCompatActivity {
 
         if (mathb.isEmpty() | mathb.equals("-") | mathb.equals("-.") | mathb.equals("+") | mathb.equals("+.") | mathg.isEmpty() | mathg.equals("-") | mathg.equals("-.") | mathg.equals("+") | mathg.equals("+.") | englishb.isEmpty() | englishb.equals("-") | englishb.equals("-.") | englishb.equals("+") | englishb.equals("+.") | englishg.isEmpty() | englishg.equals("-") | englishg.equals("-.") | englishg.equals("+") | englishg.equals("+."))
             Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
-        else if (Integer.parseInt(mathb) > 5 || Integer.parseInt(mathb) < 3 || Integer.parseInt(englishb) > 5 || Integer.parseInt(englishb) < 3) {
+        else if (Integer.parseInt(mathb) > 5 || Integer.parseInt(mathb) < 3 || Integer.parseInt(englishb) > 5 || Integer.parseInt(englishb) < 3 || Integer.parseInt(englishg) >100|| Integer.parseInt(mathg) >100) {
             Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
             eT12.setVisibility(view.INVISIBLE);
             eT13.setVisibility(view.INVISIBLE);
@@ -250,10 +250,6 @@ public class Page2 extends AppCompatActivity {
                         numm = eT13.getText().toString();
                     num = Integer.parseInt(numm);
 
-                    if (Integer.parseInt(String.valueOf(num)) > 5 || Integer.parseInt(String.valueOf(num)) < 4 || Integer.parseInt(String.valueOf(num)) == 1) {
-                        Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
-                    } else {
-
                         if (num == 5) {
                             subjectg = subjectg + 5;
                             grades = grades + 5;
@@ -266,8 +262,8 @@ public class Page2 extends AppCompatActivity {
                             subjectg = subjectg + 1;
                             grades = subjectg + 1;
                         }
-                    }
 
+                    // בדיקה של שורה ראשונה
                     nummm = eT14.getText().toString();
                     finalgrade = Integer.parseInt(nummm);
                     finalgradefir = Integer.parseInt(nummm);
@@ -275,13 +271,19 @@ public class Page2 extends AppCompatActivity {
                     finalgrade = finalgrade * subjectg;
                     double sum30 = finalgrade / grades;
                     max = sum30 ;
-                    si.putExtra("result12", String.valueOf(sum30));
-                    si.putExtra("grades12", numm);
-                    si.putExtra("name12", namesubject);
-                    si.putExtra("final12", nummm);
-                    si.putExtra("max", max);
 
-                    startActivity(si);
+
+                    if (Integer.parseInt(String.valueOf(num)) > 5 || Integer.parseInt(String.valueOf(num)) < 4 || Integer.parseInt(String.valueOf(num)) == 1|| Integer.parseInt(nummm) >100) {
+                        Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+                    } else {
+                        si.putExtra("result12", String.valueOf(sum30));
+                        si.putExtra("grades12", numm);
+                        si.putExtra("name12", namesubject);
+                        si.putExtra("final12", nummm);
+                        si.putExtra("max", max);
+
+                        startActivity(si);
+                    }
                     break;
 
                 case (2):
@@ -297,9 +299,7 @@ public class Page2 extends AppCompatActivity {
                     num = Integer.parseInt(numm);
 
 
-                    if (Integer.parseInt(String.valueOf(num)) > 5 || Integer.parseInt(String.valueOf(num)) < 4 || Integer.parseInt(String.valueOf(num)) == 1) {
-                        Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
-                    } else {
+
                         if (num == 5) {
                             subjectg = subjectg + 5;
                             grades = grades + 5;
@@ -312,7 +312,7 @@ public class Page2 extends AppCompatActivity {
                             subjectg = subjectg + 1;
                             grades = subjectg + 1;
                         }
-                    }
+
 
                     //שורה ראשונה
                     num2 = eT14.getText().toString();
@@ -332,9 +332,6 @@ public class Page2 extends AppCompatActivity {
                         num3 = eT16.getText().toString();
                     num4 = Integer.parseInt(num3);
 
-                    if (Integer.parseInt(String.valueOf(num4)) > 5 || Integer.parseInt(String.valueOf(num4)) < 4 || Integer.parseInt(String.valueOf(num4)) == 1) {
-                        Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
-                    } else {
                         if (num4 == 5) {
                             subjectg = subjectg + 5;
                             grades = +5;
@@ -347,7 +344,7 @@ public class Page2 extends AppCompatActivity {
                             subjectg = subjectg + 1;
                             grades = subjectg + 1;
                         }
-                    }
+
                     //שורה שניה
                     num6 = eT17.getText().toString();
                     finalgrade = Integer.parseInt(num6);
@@ -371,21 +368,27 @@ public class Page2 extends AppCompatActivity {
                     sum4 = finalgrade / grades;
                     if(sum4 > max)
                         max = sum4;
-                    si.putExtra("grade", numm);
-                    si.putExtra("final", num2);
-                    si.putExtra("result", String.valueOf(sum2));
-                    si.putExtra("name", namesubject);
 
-                    si.putExtra("grade2", num3);
-                    si.putExtra("final2", num6);
-                    si.putExtra("result2", String.valueOf(sum3));
-                    si.putExtra("name2", namesubject2);
+                    if (Integer.parseInt(String.valueOf(num)) > 5 || Integer.parseInt(String.valueOf(num)) < 4 || Integer.parseInt(String.valueOf(num)) == 1 || Integer.parseInt(String.valueOf(num4)) > 5 || Integer.parseInt(String.valueOf(num4)) < 4 || Integer.parseInt(String.valueOf(num4)) == 1
+                            || Integer.parseInt(num2) >100|| Integer.parseInt(num6) >100) {
+                        Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+                    } else {
+                        si.putExtra("grade", numm);
+                        si.putExtra("final", num2);
+                        si.putExtra("result", String.valueOf(sum2));
+                        si.putExtra("name", namesubject);
 
-                    si.putExtra("result3", String.valueOf(sum4));
+                        si.putExtra("grade2", num3);
+                        si.putExtra("final2", num6);
+                        si.putExtra("result2", String.valueOf(sum3));
+                        si.putExtra("name2", namesubject2);
 
-                    si.putExtra("max", max);
+                        si.putExtra("result3", String.valueOf(sum4));
 
-                    startActivity(si);
+                        si.putExtra("max", max);
+
+                        startActivity(si);
+                    }
                     break;
 
 
@@ -403,9 +406,7 @@ public class Page2 extends AppCompatActivity {
                         numm = eT13.getText().toString();
                     num = Integer.parseInt(numm);
 
-                    if (Integer.parseInt(String.valueOf(num)) > 5 || Integer.parseInt(String.valueOf(num)) < 4 || Integer.parseInt(String.valueOf(num)) == 1) {
-                        Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
-                    } else {
+
                         if (num == 5) {
                             subjectg = subjectg + 5;
                             grades = +5;
@@ -418,7 +419,7 @@ public class Page2 extends AppCompatActivity {
                             subjectg = subjectg + 1;
                             grades = subjectg + 1;
                         }
-                    }
+
                     // מחשב את הציון הממוצע של שורה ראשונה
                     num2 = eT14.getText().toString();
                     finalgrade = Integer.parseInt(num2);
@@ -436,9 +437,7 @@ public class Page2 extends AppCompatActivity {
                         num3 = eT16.getText().toString();
                     num4 = Integer.parseInt(num3);
 
-                    if (Integer.parseInt(String.valueOf(num4)) > 5 || Integer.parseInt(String.valueOf(num4)) < 4 || Integer.parseInt(String.valueOf(num4)) == 1) {
-                        Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
-                    } else {
+
                         if (num4 == 5) {
                             subjectg = subjectg + 5;
                             grades = grades + 5;
@@ -451,7 +450,7 @@ public class Page2 extends AppCompatActivity {
                             subjectg = subjectg + 1;
                             grades = subjectg + 1;
                         }
-                    }
+
                     // מחשב את הציון הממוצע של שורה שניה
                     num6 = eT17.getText().toString();
                     finalgrade = Integer.parseInt(num6);
@@ -480,9 +479,7 @@ public class Page2 extends AppCompatActivity {
                         num7 = eT19.getText().toString();
                     num8 = Integer.parseInt(num7);
 
-                    if (Integer.parseInt(String.valueOf(num8)) > 5 || Integer.parseInt(String.valueOf(num8)) < 4 || Integer.parseInt(String.valueOf(num8)) == 1) {
-                        Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
-                    } else {
+
                         if (num8 == 5) {
                             subjectg = subjectg + 5;
                             grades = grades + 5;
@@ -495,7 +492,7 @@ public class Page2 extends AppCompatActivity {
                             subjectg = subjectg + 1;
                             grades = subjectg + 1;
                         }
-                    }
+
 
                     // מחשב את הממוצע של שורה שלוש
                     num9 = eT20.getText().toString();
@@ -539,33 +536,39 @@ public class Page2 extends AppCompatActivity {
                     sum8 = finalgrade / grades;
                     if(sum8 > max)
                         max = sum8;
-                    si.putExtra("grade", num2);
-                    si.putExtra("final", numm);
-                    si.putExtra("result", String.valueOf(sum2));
-                    si.putExtra("name", namesubject);
 
-                    si.putExtra("grade2", num3);
-                    si.putExtra("final2", num6);
-                    si.putExtra("result2", String.valueOf(sum3));
-                    si.putExtra("name2", namesubject2);
+                    if (Integer.parseInt(String.valueOf(num)) > 5 || Integer.parseInt(String.valueOf(num)) < 4 || Integer.parseInt(String.valueOf(num)) == 1 || Integer.parseInt(String.valueOf(num4)) > 5 || Integer.parseInt(String.valueOf(num4)) < 4 || Integer.parseInt(String.valueOf(num4)) == 1 || Integer.parseInt(String.valueOf(num8)) > 5 || Integer.parseInt(String.valueOf(num8)) < 4 || Integer.parseInt(String.valueOf(num8)) == 1
+                            || Integer.parseInt(num2) >100|| Integer.parseInt(num6) >100|| Integer.parseInt(num9) >100)  {
+                    Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        si.putExtra("grade", num2);
+                        si.putExtra("final", numm);
+                        si.putExtra("result", String.valueOf(sum2));
+                        si.putExtra("name", namesubject);
 
-                    si.putExtra("result3", String.valueOf(sum4));
+                        si.putExtra("grade2", num3);
+                        si.putExtra("final2", num6);
+                        si.putExtra("result2", String.valueOf(sum3));
+                        si.putExtra("name2", namesubject2);
 
-                    si.putExtra("grade3", num7);
-                    si.putExtra("final3", num9);
-                    si.putExtra("result4", String.valueOf(sum5));
-                    si.putExtra("name3", namesubject3);
+                        si.putExtra("result3", String.valueOf(sum4));
 
-                    si.putExtra("result5", String.valueOf(sum6));
+                        si.putExtra("grade3", num7);
+                        si.putExtra("final3", num9);
+                        si.putExtra("result4", String.valueOf(sum5));
+                        si.putExtra("name3", namesubject3);
 
-                    si.putExtra("result6", String.valueOf(sum7));
+                        si.putExtra("result5", String.valueOf(sum6));
 
-                    si.putExtra("result7", String.valueOf(sum8));
+                        si.putExtra("result6", String.valueOf(sum7));
 
-                    si.putExtra("max", max);
+                        si.putExtra("result7", String.valueOf(sum8));
 
-                    startActivity(si);
+                        si.putExtra("max", max);
 
+                        startActivity(si);
+                    }
                     break;
 
                 default:

@@ -75,10 +75,13 @@ public class MainActivity extends AppCompatActivity {
         //תקינות קלט
         if (name.isEmpty() || name.equals("-") || name.equals("-.") || name.equals("+") || name.equals("+.") || shap.isEmpty() || shap.equals("-") || shap.equals("-.") || shap.equals("+") || shap.equals("+.") || his.isEmpty() || his.equals("-") || his.equals("-.") || his.equals("+") || his.equals("+.") || las.isEmpty() || las.equals("-") || las.equals("-.") || las.equals("+") || las.equals("+.") || hezz.isEmpty() || hezz.equals("-") || hezz.equals("-.") || hezz.equals("+") || hezz.equals("+.") || tan.isEmpty() || tan.equals("-") || tan.equals("-.") || tan.equals("+") || tan.equals("+."))
             Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
-        else
-        {
+        else if (Integer.parseInt((shap)) > 100 || Integer.parseInt((his)) > 100 ||Integer.parseInt((las)) > 100 ||Integer.parseInt((hezz)) > 100 ||Integer.parseInt((tan)) > 100 ){
 
-        // העברת הדברים לmain השני
+            Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+
+        } else {
+
+            // העברת הדברים לmain השני
             Intent si = new Intent(this, Page2.class);
             si.putExtra("result", name);
             si.putExtra("result2", shap);

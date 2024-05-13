@@ -61,7 +61,7 @@ public class MainActivity3 extends AppCompatActivity {
                         math2 + "                             " + math1 + "                             math                     " + "\n" +
                         english2 + "                             " + english1 + "                              english                     " + "\n" +
                         finalGrade1 + "                             " + grades1 + "                             " + name1 + "                     " + "\n");
-                 tV15.setText( ""+ result1+"                         the highest result is:" +max);
+                tV15.setText( ""+ result1+"                         the highest result is:" +max);
                 break;
             case 2:
                 String grade = intent.getStringExtra("grade");
