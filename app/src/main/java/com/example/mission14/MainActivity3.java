@@ -19,22 +19,25 @@ public class MainActivity3 extends AppCompatActivity {
         setContentView(R.layout.activity_main3);
         tV = findViewById(R.id.tV);
         tV15 = findViewById(R.id.tV15);
+
+
+        tV.setText("");
+        tV15.setText("");
+
         Intent intent = getIntent();
         int count = intent.getIntExtra("subjectCount", 0);
 
-
-
         Intent gi = getIntent();
-        String name11 = gi.getStringExtra("subject");
-        String shap = gi.getStringExtra("subject2");
-        String his = gi.getStringExtra("subject3");
-        String las = gi.getStringExtra("subject4");
-        String hezz = gi.getStringExtra("subject5");
-        String tan = gi.getStringExtra("subject6");
-        String math1 = gi.getStringExtra("math1");
-        String math2 = gi.getStringExtra("math2");
-        String english1 = gi.getStringExtra("english1");
-        String english2 = gi.getStringExtra("english2");
+        String name11 = intent.getStringExtra("subject");
+        String shap = intent.getStringExtra("subject2");
+        String his = intent.getStringExtra("subject3");
+        String las = intent.getStringExtra("subject4");
+        String hezz = intent.getStringExtra("subject5");
+        String tan = intent.getStringExtra("subject6");
+        String math1 = intent.getStringExtra("math1");
+        String math2 = intent.getStringExtra("math2");
+        String english1 = intent.getStringExtra("english1");
+        String english2 = intent.getStringExtra("english2");
 
 
         int shapp = Integer.parseInt(shap);
