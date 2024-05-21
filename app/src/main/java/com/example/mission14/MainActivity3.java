@@ -46,6 +46,9 @@ public class MainActivity3 extends AppCompatActivity {
         int hez = Integer.parseInt(hezz);
         int tann = Integer.parseInt(tan);
 
+        boolean already  = true ;
+        Intent si = new Intent(this, Page2.class);
+        si.putExtra("already", already);
 
         switch (count) {
             case 1:
