@@ -61,7 +61,7 @@ public class MainActivity3 extends AppCompatActivity {
                         math2 + "                             " + math1 + "                             math                     " + "\n" +
                         english2 + "                             " + english1 + "                              english                     " + "\n" +
                         finalGrade1 + "                             " + grades1 + "                             " + name1 + "                     " + "\n");
-                tV15.setText( ""+ result1+"                         the highest result is:" +max);
+                tV15.setText( "the highest result is:" +max+"\n"+ result1 +"          " );
                 break;
             case 2:
                 String grade = intent.getStringExtra("grade");
@@ -90,7 +90,7 @@ public class MainActivity3 extends AppCompatActivity {
                         finalGrade2 + "                             " + grade2 + "                             " + name2 + "                     " + "\n"
                         );
 
-                tV15.setText( ""+ result+"                         the highest result is:" +max2 +"\n"+result2 +"\n"+result3  );
+                tV15.setText( "the highest result is:" +max2+"\n"+ result +"          " +"\n"+result2 +"\n"+result3  );
 
 
                 break;
@@ -136,6 +136,9 @@ public class MainActivity3 extends AppCompatActivity {
 
                 tV15.setText( "the highest result is:" +max3+"\n"+ result4 +"          " +"\n"+result5 +"\n"+result6+"\n"+result7+"\n"+result8+"\n"+result9+"\n"+result10 );
 
+
+
+                
                 break;
 
             default:
@@ -147,6 +150,9 @@ public class MainActivity3 extends AppCompatActivity {
     }
     public void prev3(View view)
     {
+
+
         finish();
+
     }
 }
