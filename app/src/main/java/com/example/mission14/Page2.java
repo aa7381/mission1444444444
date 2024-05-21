@@ -12,8 +12,9 @@ public class Page2 extends AppCompatActivity {
     String name, shap, his, las, hezz, tan;
     EditText mathbag, mathgrade, englishbag, englishgrade, eT12, eT13, eT14, eT15, eT16, eT17, eT18, eT19, eT20;
     int bonus = 0, bonus2 = 0, grades = 10, finalgrade = 0, finalgrade2 = 0, subjectg = 0, mathbonus = 0, englishbonus = 0, count = 0, bonus3 = 0, bonusfirst = 0, bonussecond = 0, bonusthird = 0, mathbonus2 = 0, englishbonus2 = 0, num, num4, num8, finalgradefir = 0, finalgradesec = 0, finalgradethi = 0, mathgg, englishgg;
-    double sum = 0, sum2, sum3, sum4, sum5, sum6, sum7, sum8, max;
+    double sum = 0, sum2, sum3, sum4, sum5, sum6, sum7, sum8, max ,thesum , thesumfirst , thesumsecond , thesumthird , thesummath , thesumenglish , englishggg , mathggg , thesumf,thesums ,thesumt ;
     Button btn7, btn8, btn9;
+    int counterrrr ;
     String numm, num2, num3, num6, num7, num9, nummm, mathb, mathg, englishb, englishg, namesubject, namesubject2, namesubject3;
 
     @Override
@@ -41,6 +42,8 @@ public class Page2 extends AppCompatActivity {
         las = gi.getStringExtra("result4");
         hezz = gi.getStringExtra("result5");
         tan = gi.getStringExtra("result6");
+        thesum = gi.getDoubleExtra("result7",0);
+        counterrrr = gi.getIntExtra("counterrrr",0);
 
         int shapp = Integer.parseInt(shap);
         int hiss = Integer.parseInt(his);
@@ -51,7 +54,7 @@ public class Page2 extends AppCompatActivity {
         eT12.setHint("enter subject");
         eT15.setHint("enter subject");
         eT18.setHint("enter subject");
-
+    count = counterrrr;
 
     }
 
@@ -203,20 +206,18 @@ public class Page2 extends AppCompatActivity {
         englishg = englishgrade.getText().toString();
 
         Intent si = new Intent(this, MainActivity3.class);
-        si.putExtra("subject", name);
-        si.putExtra("subject2", shap);
-        si.putExtra("subject3", his);
-        si.putExtra("subject4", las);
-        si.putExtra("subject5", hezz);
-        si.putExtra("subject6", tan);
-        si.putExtra("subject7", count);
-        si.putExtra("math1", String.valueOf(mathb));
-        si.putExtra("math2", String.valueOf(mathg));
-        si.putExtra("english1", String.valueOf(englishb));
-        si.putExtra("english2", String.valueOf(englishg));
-        si.putExtra("subjectCount", count);
-
-
+            si.putExtra("subject", name);
+            si.putExtra("subject2", shap);
+            si.putExtra("subject3", his);
+            si.putExtra("subject4", las);
+            si.putExtra("subject5", hezz);
+            si.putExtra("subject6", tan);
+            si.putExtra("subject7", count);
+            si.putExtra("math1", String.valueOf(mathb));
+            si.putExtra("math2", String.valueOf(mathg));
+            si.putExtra("english1", String.valueOf(englishb));
+            si.putExtra("english2", String.valueOf(englishg));
+            si.putExtra("subjectCount", count);
         String mathh = mathbag.getText().toString();
         mathgg = Integer.parseInt(mathh);
 
@@ -225,8 +226,18 @@ public class Page2 extends AppCompatActivity {
 
 
 
+
+        if(count == 5 && (TextUtils.isEmpty(eT12.getText().toString()) || eT12.equals("-") || eT12.equals("-.") || eT12.equals("+") || eT12.equals("+.") || TextUtils.isEmpty(eT13.getText().toString()) || eT13.equals("-") || eT13.equals("-.") || eT13.equals("+") || eT13.equals("+.") || TextUtils.isEmpty(eT14.getText().toString()) || eT14.equals("-") || eT14.equals("-.") || eT14.equals("+") || eT14.equals("+.") ||
+                TextUtils.isEmpty(eT15.getText().toString()) || eT15.equals("-") || eT15.equals("-.") || eT15.equals("+") || eT15.equals("+.") || TextUtils.isEmpty(eT16.getText().toString()) || eT16.equals("-") || eT16.equals("-.") || eT16.equals("+") || eT16.equals("+.") || TextUtils.isEmpty(eT17.getText().toString()) || eT17.equals("-") || eT17.equals("-.") || eT17.equals("+") || eT17.equals("+.") ||
+                TextUtils.isEmpty(eT18.getText().toString()) || eT18.equals("-") || eT18.equals("-.") || eT18.equals("+") || eT18.equals("+.") || TextUtils.isEmpty(eT19.getText().toString()) || eT19.equals("-") || eT19.equals("-.") || eT19.equals("+") || eT19.equals("+.") || TextUtils.isEmpty(eT20.getText().toString()) || eT20.equals("-") || eT20.equals("-.") || eT20.equals("+") || eT20.equals("+.")
+            || TextUtils.isEmpty(mathbag.getText().toString()) ||mathbag.equals("-") || mathbag.equals("-.") || mathbag.equals("+") || mathbag.equals("+.")|| TextUtils.isEmpty(mathgrade.getText().toString()) ||mathgrade.equals("-") || mathgrade.equals("-.") || mathgrade.equals("+") || mathgrade.equals("+.")
+                || TextUtils.isEmpty(englishbag.getText().toString()) ||englishbag.equals("-") || englishbag.equals("-.") || englishbag.equals("+") || englishbag.equals("+.")|| TextUtils.isEmpty(englishgrade.getText().toString()) ||englishgrade.equals("-") || englishgrade.equals("-.") || englishgrade.equals("+") || englishgrade.equals("+.")))
+        {
+            Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
+
+        }
         
-        if (count == 3  && (TextUtils.isEmpty(eT12.getText().toString()) || eT12.equals("-") || eT12.equals("-.") || eT12.equals("+") || eT12.equals("+.") || TextUtils.isEmpty(eT13.getText().toString()) || eT13.equals("-") || eT13.equals("-.") || eT13.equals("+") || eT13.equals("+.") || TextUtils.isEmpty(eT14.getText().toString()) || eT14.equals("-") || eT14.equals("-.") || eT14.equals("+") || eT14.equals("+.") ||
+        else if (count == 3  && (TextUtils.isEmpty(eT12.getText().toString()) || eT12.equals("-") || eT12.equals("-.") || eT12.equals("+") || eT12.equals("+.") || TextUtils.isEmpty(eT13.getText().toString()) || eT13.equals("-") || eT13.equals("-.") || eT13.equals("+") || eT13.equals("+.") || TextUtils.isEmpty(eT14.getText().toString()) || eT14.equals("-") || eT14.equals("-.") || eT14.equals("+") || eT14.equals("+.") ||
                 TextUtils.isEmpty(eT15.getText().toString()) || eT15.equals("-") || eT15.equals("-.") || eT15.equals("+") || eT15.equals("+.") || TextUtils.isEmpty(eT16.getText().toString()) || eT16.equals("-") || eT16.equals("-.") || eT16.equals("+") || eT16.equals("+.") || TextUtils.isEmpty(eT17.getText().toString()) || eT17.equals("-") || eT17.equals("-.") || eT17.equals("+") || eT17.equals("+.") ||
                 TextUtils.isEmpty(eT18.getText().toString()) || eT18.equals("-") || eT18.equals("-.") || eT18.equals("+") || eT18.equals("+.") || TextUtils.isEmpty(eT19.getText().toString()) || eT19.equals("-") || eT19.equals("-.") || eT19.equals("+") || eT19.equals("+.") || TextUtils.isEmpty(eT20.getText().toString()) || eT20.equals("-") || eT20.equals("-.") || eT20.equals("+") || eT20.equals("+."))) {
             Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
@@ -243,14 +254,26 @@ public class Page2 extends AppCompatActivity {
 
             switch (count) {
                 case (1):
+                    thesumfirst = 0 ;
+                    thesumsecond = 0 ;
+                    thesumthird = 0 ;
                     subjectg = 0;
                     namesubject = eT12.getText().toString();
                     grades = grades + mathgg + englishgg;
 
+                    mathggg = Double.parseDouble(mathg);
+                    englishggg = Double.parseDouble(englishg);
+
                     mathbonus2 = math(mathb, mathg, mathbag, mathgrade, mathgg, mathbonus);
                     englishbonus2 = english(englishb, englishg, englishbag, englishgrade, englishgg, englishbonus);
 
-                        numm = eT13.getText().toString();
+                    thesummath =thesummath + mathggg + mathbonus2;
+                    thesummath = thesummath* mathgg;
+                    thesumenglish = thesumenglish + englishggg + englishbonus2;
+                    thesumenglish = thesumenglish *englishgg ;
+
+
+                    numm = eT13.getText().toString();
                     num = Integer.parseInt(numm);
 
                         if (num == 5) {
@@ -269,12 +292,11 @@ public class Page2 extends AppCompatActivity {
                     // בדיקה של שורה ראשונה
                     nummm = eT14.getText().toString();
                     finalgrade = Integer.parseInt(nummm);
-                    finalgradefir = Integer.parseInt(nummm);
-                    finalgrade = finalgrade + bonusfirst + mathbonus2 + englishbonus2;
-                    finalgrade = finalgrade * subjectg;
-                    double sum30 = finalgrade / grades;
+                    thesumf =thesumf +  finalgrade + bonusfirst;
+                    thesumf = thesumf*num;
+                    thesumfirst = thesumfirst + thesumf + thesum + thesummath + thesumenglish ;
+                    double sum30 = thesumfirst / grades;
                     max = sum30 ;
-
 
                     if (Integer.parseInt(String.valueOf(num)) > 5 || Integer.parseInt(String.valueOf(num)) < 4 || Integer.parseInt(String.valueOf(num)) == 1|| Integer.parseInt(nummm) >100) {
                         Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
@@ -290,13 +312,24 @@ public class Page2 extends AppCompatActivity {
                     break;
 
                 case (2):
+                    thesumfirst = 0 ;
+                    thesumsecond = 0 ;
+                    thesumthird = 0 ;
                     grades = 10;
                     subjectg = 0;
 
                     grades = grades + mathgg + englishgg;
 
+                    mathggg = Double.parseDouble(mathg);
+                    englishggg = Double.parseDouble(englishg);
+
                     mathbonus2 = math(mathb, mathg, mathbag, mathgrade, mathgg, mathbonus);
                     englishbonus2 = english(englishb, englishg, englishbag, englishgrade, englishgg, englishbonus);
+
+                    thesummath =thesummath + mathggg + mathbonus2;
+                    thesummath = thesummath* mathgg;
+                    thesumenglish = thesumenglish + englishggg + englishbonus2;
+                    thesumenglish = thesumenglish *englishgg ;
 
                         numm = eT13.getText().toString();
                     num = Integer.parseInt(numm);
@@ -320,15 +353,15 @@ public class Page2 extends AppCompatActivity {
                     //שורה ראשונה
                     num2 = eT14.getText().toString();
                     finalgrade = Integer.parseInt(num2);
-                    finalgradefir = Integer.parseInt(num2);
-                    finalgrade = finalgrade + bonusfirst + mathbonus2 + englishbonus2;
-                    finalgrade = finalgrade * subjectg;
-                    sum2 = finalgrade / grades;
+                    thesumf =thesumf +  finalgrade + bonusfirst;
+                    thesumf = thesumf*num;
+                    thesumfirst = thesumfirst + thesumf + thesum + thesummath + thesumenglish ;
+                    sum2 = thesumfirst / grades;
                     max = sum2;
                     namesubject = eT12.getText().toString();
 
                     sum = 0;
-                    grades = grades - num;
+                    grades = grades -num;
                     subjectg = 0;
 
 
@@ -336,39 +369,34 @@ public class Page2 extends AppCompatActivity {
                     num4 = Integer.parseInt(num3);
 
                         if (num4 == 5) {
-                            subjectg = subjectg + 5;
-                            grades = +5;
-                            bonusfirst = 20;
+                            grades =grades +5;
+                            bonussecond = 20;
                         } else if (num4 == 4) {
-                            subjectg = subjectg + 4;
                             grades = grades + 4;
-                            bonusfirst = 10;
+                            bonussecond = 10;
                         } else {
-                            subjectg = subjectg + 1;
-                            grades = subjectg + 1;
+                            grades = grades + 1;
                         }
 
                     //שורה שניה
+
                     num6 = eT17.getText().toString();
-                    finalgrade = Integer.parseInt(num6);
                     finalgradesec = Integer.parseInt(num6);
-                    finalgrade = finalgrade + bonussecond + mathbonus2 + englishbonus2;
-                    finalgrade = finalgrade * subjectg;
-                    sum3 = finalgrade / grades;
+                    thesums = finalgradesec + bonussecond;
+                    thesums = thesums*num4;
+                    thesumsecond = thesumsecond + thesums + thesum + thesummath + thesumenglish ;
+                    sum3 = thesumsecond / grades;
                     namesubject2 = eT15.getText().toString();
                     if(sum3 > max)
                         max = sum3;
 
                     grades = grades - num4;
-                    subjectg = 0;
                     finalgrade = 0;
 
                     // שורה ראשונה ושניה
-                    grades = grades + num4 + num;
-                    subjectg = subjectg + num4 + num;
-                    finalgrade = finalgradesec + finalgradefir + bonusfirst + bonussecond + mathbonus2 + englishbonus2;
-                    finalgrade = finalgrade * subjectg;
-                    sum4 = finalgrade / grades;
+                    grades = grades + num4 + num ;
+                    thesumthird =thesumthird +  thesums + thesumf + thesumenglish + thesummath + thesum ;
+                    sum4 = thesumthird/ grades;
                     if(sum4 > max)
                         max = sum4;
 
@@ -376,6 +404,7 @@ public class Page2 extends AppCompatActivity {
                             || Integer.parseInt(num2) >100|| Integer.parseInt(num6) >100) {
                         Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
                     } else {
+
                         si.putExtra("grade", numm);
                         si.putExtra("final", num2);
                         si.putExtra("result", String.valueOf(sum2));
@@ -396,147 +425,135 @@ public class Page2 extends AppCompatActivity {
 
 
                 case (3):
-                    finalgrade2 = 0;
+                    thesumfirst = 0 ;
+                    thesumsecond = 0 ;
+                    thesumthird = 0 ;
                     grades = 10;
-                    subjectg = 0;
-
                     grades = grades + mathgg + englishgg;
                     // בודק יחידות
+                    mathggg = Double.parseDouble(mathg);
+                    englishggg = Double.parseDouble(englishg);
+
                     mathbonus2 = math(mathb, mathg, mathbag, mathgrade, mathgg, mathbonus);
                     englishbonus2 = english(englishb, englishg, englishbag, englishgrade, englishgg, englishbonus);
+
+                    thesummath =thesummath + mathggg + mathbonus2;
+                    thesummath = thesummath* mathgg;
+                    thesumenglish = thesumenglish + englishggg + englishbonus2;
+                    thesumenglish = thesumenglish *englishgg ;
                     // בודק כמה יחידות יש לשורה הראשונה
 
                         numm = eT13.getText().toString();
                     num = Integer.parseInt(numm);
-
-
                         if (num == 5) {
-                            subjectg = subjectg + 5;
-                            grades = +5;
+                            grades = grades + 5;
                             bonusfirst = 20;
                         } else if (num == 4) {
-                            subjectg = subjectg + 4;
                             grades = grades + 4;
                             bonusfirst = 10;
                         } else {
-                            subjectg = subjectg + 1;
-                            grades = subjectg + 1;
+                            grades = grades + 1;
                         }
-
                     // מחשב את הציון הממוצע של שורה ראשונה
                     num2 = eT14.getText().toString();
                     finalgrade = Integer.parseInt(num2);
-                    finalgradefir = Integer.parseInt(num2);
-                    finalgrade = finalgrade + bonusfirst + mathbonus2 + englishbonus2;
-                    finalgrade = finalgrade * subjectg;
-                    sum2 = finalgrade / grades;
+                    thesumf =thesumf +  finalgrade + bonusfirst;
+                    thesumf = thesumf*num;
+                    thesumfirst = thesumfirst + thesumf + thesum + thesummath + thesumenglish ;
+                    sum2 = thesumfirst / grades;
                     max = sum2;
                     namesubject = eT12.getText().toString();
 
                     grades = grades - num;
-                    subjectg = 0;
+
                     // בודק כמה יחידות יש לשורה השניה
 
                         num3 = eT16.getText().toString();
                     num4 = Integer.parseInt(num3);
 
-
                         if (num4 == 5) {
-                            subjectg = subjectg + 5;
                             grades = grades + 5;
-                            bonusfirst = 20;
+                            bonussecond  = 20;
                         } else if (num4 == 4) {
-                            subjectg = subjectg + 4;
                             grades = grades + 4;
-                            bonusfirst = 10;
+                            bonussecond = 10;
                         } else {
-                            subjectg = subjectg + 1;
-                            grades = subjectg + 1;
+                            grades = grades + 1;
                         }
 
                     // מחשב את הציון הממוצע של שורה שניה
                     num6 = eT17.getText().toString();
-                    finalgrade = Integer.parseInt(num6);
                     finalgradesec = Integer.parseInt(num6);
-                    finalgrade = finalgrade + bonussecond + mathbonus2 + englishbonus2;
-                    finalgrade = finalgrade * subjectg;
-                    sum3 = finalgrade / grades;
+                    thesums = finalgradesec + bonussecond;
+                    thesums = thesums*num4;
+                    thesumsecond = thesumsecond + thesums + thesum + thesummath + thesumenglish ;
+                    sum3 = thesumsecond / grades;
                     if(sum3 > max)
                         max = sum3;
                     namesubject2 = eT15.getText().toString();
 
                     grades = grades - num4;
-                    subjectg = 0;
+
+
                     // מחשב את הממוצע של עמוד ראשון ועמוד שני הציון
-                    grades = grades + num4 + num;
-                    subjectg = subjectg + num4 + num;
-                    finalgrade = finalgradefir + finalgradesec + bonusfirst + bonussecond + mathbonus2 + englishbonus2;
-                    finalgrade = finalgrade * subjectg;
-                    sum4 = finalgrade / grades;
+                    grades = grades + num4 + num ;
+                    thesumthird =thesumthird +  thesums + thesumf + thesumenglish + thesummath + thesum ;
+                    sum4 = thesumthird/ grades;
                     if(sum4 > max)
                         max = sum4;
                     grades = grades - num4 - num;
-                    subjectg = 0;
+                    thesumthird = 0 ;
                     //מחשב את העמוד השלישי כמה יחידות יש
 
                         num7 = eT19.getText().toString();
                     num8 = Integer.parseInt(num7);
-
-
                         if (num8 == 5) {
-                            subjectg = subjectg + 5;
                             grades = grades + 5;
-                            bonusfirst = 20;
+                            bonusthird = 20;
                         } else if (num8 == 4) {
-                            subjectg = subjectg + 4;
                             grades = grades + 4;
-                            bonusfirst = 10;
+                            bonusthird = 10;
                         } else {
-                            subjectg = subjectg + 1;
-                            grades = subjectg + 1;
+                            grades = grades + 1;
                         }
-
 
                     // מחשב את הממוצע של שורה שלוש
                     num9 = eT20.getText().toString();
-                    finalgrade = Integer.parseInt(num9);
-                    finalgradethi = Integer.parseInt(num9);
-                    finalgrade = finalgrade + bonusthird + mathbonus2 + englishbonus2;
-                    finalgrade = finalgrade * subjectg;
-                    sum5 = finalgrade / grades;
+                    finalgradethi = Integer.parseInt(num6);
+                    thesumt = finalgradethi + bonusthird;
+                    thesumt = thesumt*num8;
+                    thesumthird= thesumthird + thesumt + thesum + thesummath + thesumenglish ;
+                    sum5 = thesumthird / grades;
                     if(sum5 > max)
                         max = sum5;
-                    namesubject3 = eT18.getText().toString();
 
+                    namesubject3 = eT18.getText().toString();
                     grades = grades - num8;
-                    subjectg = 0;
+                    thesumthird = 0 ;
+
                     // מחשב את הממוצע של עמוד ראשון ועמוד השלישי הציון
                     grades = grades + num8 + num;
-                    subjectg = subjectg + num8 + num;
-                    finalgrade = finalgradefir + finalgradethi + bonusfirst + bonusthird + mathbonus2 + englishbonus2;
-                    finalgrade = finalgrade * subjectg;
-                    sum6 = finalgrade / grades;
+                    thesumthird =thesumthird +  thesumt + thesumf + thesumenglish + thesummath + thesum ;
+                    sum6 = thesumthird / grades;
                     if(sum6 > max)
                         max = sum6;
                     grades = grades - num8 - num;
-                    subjectg = 0;
+                    thesumthird = 0  ;
+
                     // מחשב את הממוצע של עמוד שני  ועמוד השלישי הציון
                     grades = grades + num8 + num4;
-                    subjectg = subjectg + num8 + num4;
-                    finalgrade = finalgradesec + bonusthird + bonussecond + mathbonus2 + englishbonus2;
-                    finalgrade = finalgrade * subjectg;
-                    sum7 = finalgrade / grades;
+                    thesumthird =thesumthird +  thesumt + thesums + thesumenglish + thesummath + thesum ;
+                    sum7 = thesumthird / grades;
                     if(sum7 > max)
                         max = sum7;
+
                     grades = grades - num8 - num4;
-                    subjectg = 0;
+                    thesumthird =0 ;
 
                     // מחשב את הממוצע של עמוד הראשון השני ועמוד השלישי הציון
                     grades = grades + num8 + num + num4;
-                    subjectg = subjectg + num8 + num + num4;
-                    finalgrade = finalgradefir + finalgradesec + finalgradethi + bonusfirst + bonusthird + bonussecond + mathbonus2 + englishbonus2;
-                    finalgrade = finalgrade * subjectg;
-                    sum8 = finalgrade / grades;
+                    thesumthird =thesumthird +  thesumt + thesums + thesumf +  thesumenglish + thesummath + thesum ;
+                    sum8= thesumthird / grades;
                     if(sum8 > max)
                         max = sum8;
 

@@ -134,7 +134,7 @@ public class MainActivity3 extends AppCompatActivity {
                         finalGrade4 + "                             " + grade4 + "                             " + name4 + "                     " + "\n" +
                         finalGrade5 + "                             " + grade5 + "                             " + name6 + "                     ");
 
-                tV15.setText( ""+ result4 +"                         the highest result is:" +max3+"\n"+result5 +"\n"+result6+"\n"+result7+"\n"+result8+"\n"+result9+"\n"+result10 );
+                tV15.setText( "the highest result is:" +max3+"\n"+ result4 +"          " +"\n"+result5 +"\n"+result6+"\n"+result7+"\n"+result8+"\n"+result9+"\n"+result10 );
 
                 break;
 

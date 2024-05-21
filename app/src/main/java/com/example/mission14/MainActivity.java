@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText eT, eT2, eT3, eT4, eT5, eT6;
     Button nextbtn ;
+    double sum ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
         String hezz = eT5.getText().toString();
         String tan = eT6.getText().toString();
 
+        Double shapp =  Double.parseDouble(shap);
+        Double hiss =  Double.parseDouble(his);
+        Double lass =  Double.parseDouble(las);
+        Double hezzz =  Double.parseDouble(hezz);
+        Double tann =  Double.parseDouble(tan);
+        int count = 5 ;
+        sum = sum + shapp*2 + hiss*2 + lass*2 + hezzz*2 + tann*2 ;
+
         //תקינות קלט
         if (name.isEmpty() || name.equals("-") || name.equals("-.") || name.equals("+") || name.equals("+.") || shap.isEmpty() || shap.equals("-") || shap.equals("-.") || shap.equals("+") || shap.equals("+.") || his.isEmpty() || his.equals("-") || his.equals("-.") || his.equals("+") || his.equals("+.") || las.isEmpty() || las.equals("-") || las.equals("-.") || las.equals("+") || las.equals("+.") || hezz.isEmpty() || hezz.equals("-") || hezz.equals("-.") || hezz.equals("+") || hezz.equals("+.") || tan.isEmpty() || tan.equals("-") || tan.equals("-.") || tan.equals("+") || tan.equals("+."))
             Toast.makeText(this, "Invalid input", Toast.LENGTH_SHORT).show();
@@ -89,6 +98,9 @@ public class MainActivity extends AppCompatActivity {
             si.putExtra("result4", las);
             si.putExtra("result5", hezz);
             si.putExtra("result6", tan);
+            si.putExtra("result7", sum);
+            si.putExtra("counterrrr", count);
+
             startActivity(si);
 
 
